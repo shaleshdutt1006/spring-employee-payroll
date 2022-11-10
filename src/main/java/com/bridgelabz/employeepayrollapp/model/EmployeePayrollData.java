@@ -12,6 +12,7 @@ public class EmployeePayrollData {
 
     private int employeeId;
     private String firstName;
+
     private String lastName;
     private long salary;
     private String profilePic;
@@ -28,6 +29,24 @@ public class EmployeePayrollData {
 
     public EmployeePayrollData() {
 
+    }
+
+    public EmployeePayrollData(EmployeePayrollData employeePayrollData) {
+        this.employeeId = employeePayrollData.employeeId;
+        this.firstName = employeePayrollData.firstName;
+        this.lastName = employeePayrollData.lastName;
+        this.salary = employeePayrollData.salary;
+        this.profilePic = employeePayrollData.profilePic;
+        this.startDate = employeePayrollData.startDate;
+    }
+
+    public EmployeePayrollData(int id, EmployeePayrollData employeePayrollData) {
+        this.employeeId = id;
+        this.firstName = employeePayrollData.firstName;
+        this.lastName = employeePayrollData.lastName;
+        this.salary = employeePayrollData.salary;
+        this.profilePic = employeePayrollData.profilePic;
+        this.startDate = employeePayrollData.startDate;
     }
 
     public int getEmployeeId() {
