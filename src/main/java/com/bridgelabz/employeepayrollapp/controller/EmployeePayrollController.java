@@ -8,5 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
+@RequestMapping("/payroll")
+public class EmployeePayrollController {
+
+    @Autowired
+    EmployeePayrollService employeePayrollService;
+
+    @GetMapping("/get")
+    public String display() {
+        return employeePayrollService.display();
+    }
 
 }

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeePayrollService {
 
-    public String display(){
+    public String display() {
         return "Hello from Shalesh Dutt";
     }
 }
