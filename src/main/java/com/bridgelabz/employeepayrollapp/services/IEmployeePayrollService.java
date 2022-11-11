@@ -24,4 +24,15 @@ public interface IEmployeePayrollService {
     List<EmployeePayrollData> getAll();
 
 
+    //Method to delete data by its id
+    List<EmployeePayrollData> deleteById(int id);
+
+    //Method to delete all the data in database
+    List<EmployeePayrollData> deleteAll();
+
+    //Count number of employees in database using id
+    String countByIdInRepository();
+
+    //Count number of employees in database using id
+    String countIdInSavedList();
 }

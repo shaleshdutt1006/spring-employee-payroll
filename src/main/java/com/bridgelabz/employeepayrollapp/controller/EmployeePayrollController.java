@@ -23,7 +23,7 @@ public class EmployeePayrollController {
     @PostMapping("/add")
     public ResponseEntity<ResponseDTO> addData(@RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData employeePayrollData = employeePayrollService.addData(employeePayrollDTO);
-        ResponseDTO responseDTO = new ResponseDTO("Data added successfully ", employeePayrollDTO);
+        ResponseDTO responseDTO = new ResponseDTO("Data added successfully ", employeePayrollData);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
     }
 
@@ -33,7 +33,7 @@ public class EmployeePayrollController {
     public ResponseEntity<ResponseDTO> updateData(@PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData updatedEmployee = employeePayrollService.updateData(Id, employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated employee data successfully", updatedEmployee);
-        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 
     }
 
@@ -42,7 +42,7 @@ public class EmployeePayrollController {
     public ResponseEntity<ResponseDTO> EditData(@PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData updatedEmployee = employeePayrollService.EditData(Id, employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated employee data successfully", updatedEmployee);
-        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 
     }
 
@@ -52,14 +52,36 @@ public class EmployeePayrollController {
     public ResponseEntity<ResponseDTO> getById(@PathVariable(value = "Id") int Id) {
         Optional<EmployeePayrollData> updatedEmployee = employeePayrollService.getById(Id);
         ResponseDTO responseDTO = new ResponseDTO("Get call Id successfully", updatedEmployee);
-        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+        return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
 
-
     //Method to get all the data in database
-    @GetMapping("/getall")
+    @GetMapping("/get-all")
     public List<EmployeePayrollData> getAll() {
         return employeePayrollService.getAll();
     }
 
+    //Method to delete data by its Id
+    @DeleteMapping("delete/{Id}")
+    public List<EmployeePayrollData> deleteBYId(@PathVariable(value = "Id") int Id) {
+        return employeePayrollService.deleteById(Id);
+    }
+
+    //Method to delete all data
+    @DeleteMapping("/delete-all")
+    public List<EmployeePayrollData> deleteAll() {
+        return employeePayrollService.deleteAll();
+    }
+
+    //Count number of employees in database using id
+    @GetMapping("/countInRepo")
+    public String countById() {
+        return employeePayrollService.countByIdInRepository();
+    }
+
+    //Count number of employees in saved arraylist
+    @GetMapping("/countInList")
+    public String countIdInSavedList() {
+        return employeePayrollService.countIdInSavedList();
+    }
 }

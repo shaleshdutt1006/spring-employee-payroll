@@ -5,6 +5,7 @@ import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.repository.EmployeePayrollRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -74,5 +75,32 @@ public class EmployeePayrollService implements IEmployeePayrollService {
         return employeePayrollDataList;
     }
 
+    @Override
+    //Method to delete data by its id
+    public List<EmployeePayrollData> deleteById(int id) {
+        employeePayrollRepository.deleteById(id);
+        employeePayrollDataList.remove(id - 1);
+        return employeePayrollRepository.findAll();
+    }
+
+    @Override
+    //Method to delete all the data in database
+    public List<EmployeePayrollData> deleteAll() {
+        employeePayrollDataList.clear();
+        employeePayrollRepository.deleteAll();
+        return employeePayrollRepository.findAll();
+    }
+
+    @Override
+    //Count number of employees in database using id
+    public String countByIdInRepository() {
+        return "Number of employees in database are : " + employeePayrollRepository.count();
+    }
+
+    @Override
+    //Count number of employees in database using id
+    public String countIdInSavedList() {
+        return "Number of employees in the List is : " + employeePayrollDataList.size();
+    }
 
 }
