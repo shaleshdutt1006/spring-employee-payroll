@@ -1,5 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,41 +14,34 @@ public class EmployeePayrollData {
 
     private int employeeId;
     private String firstName;
-
     private String lastName;
     private long salary;
     private String profilePic;
-    LocalDate startDate;
 
-    public EmployeePayrollData(int employeeId, String firstName, String lastName, long salary, String profilePic, LocalDate startDate) {
-        this.employeeId = employeeId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.salary = salary;
-        this.profilePic = profilePic;
-        this.startDate = startDate;
-    }
+    LocalDate date;
+
 
     public EmployeePayrollData() {
 
     }
 
-    public EmployeePayrollData(EmployeePayrollData employeePayrollData) {
-        this.employeeId = employeePayrollData.employeeId;
-        this.firstName = employeePayrollData.firstName;
-        this.lastName = employeePayrollData.lastName;
-        this.salary = employeePayrollData.salary;
-        this.profilePic = employeePayrollData.profilePic;
-        this.startDate = employeePayrollData.startDate;
+    //insert constructor
+    public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
+        this.firstName = employeePayrollDTO.getFirstName();
+        this.lastName = employeePayrollDTO.getLastName();
+        this.salary = employeePayrollDTO.getSalary();
+        this.profilePic = employeePayrollDTO.getProfilePic();
+        this.date = employeePayrollDTO.getDate();
     }
 
-    public EmployeePayrollData(int id, EmployeePayrollData employeePayrollData) {
+    //update constructor
+    public EmployeePayrollData(int id, EmployeePayrollDTO employeePayrollDTO) {
         this.employeeId = id;
-        this.firstName = employeePayrollData.firstName;
-        this.lastName = employeePayrollData.lastName;
-        this.salary = employeePayrollData.salary;
-        this.profilePic = employeePayrollData.profilePic;
-        this.startDate = employeePayrollData.startDate;
+        this.firstName = employeePayrollDTO.getFirstName();
+        this.lastName = employeePayrollDTO.getLastName();
+        this.salary = employeePayrollDTO.getSalary();
+        this.profilePic = employeePayrollDTO.getProfilePic();
+        this.date = employeePayrollDTO.getDate();
     }
 
     public int getEmployeeId() {
@@ -89,11 +84,11 @@ public class EmployeePayrollData {
         this.profilePic = profilePic;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
