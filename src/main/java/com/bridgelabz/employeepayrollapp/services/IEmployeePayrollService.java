@@ -30,9 +30,9 @@ public interface IEmployeePayrollService {
     //Method to delete all the data in database
     List<EmployeePayrollData> deleteAll();
 
-    //Count number of employees in database using id
+    //Count number of employees in database using employeeId
     String countByIdInRepository();
 
-    //Count number of employees in database using id
+    //Count number of employees in database using employeeId
     String countIdInSavedList();
 }

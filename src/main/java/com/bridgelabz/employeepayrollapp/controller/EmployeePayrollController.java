@@ -61,7 +61,7 @@ public class EmployeePayrollController {
         return employeePayrollService.getAll();
     }
 
-    //Method to delete data by its Id
+    //Method to delete data by its employeeId
     @DeleteMapping("delete/{Id}")
     public List<EmployeePayrollData> deleteBYId(@PathVariable(value = "Id") int Id) {
         return employeePayrollService.deleteById(Id);
