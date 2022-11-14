@@ -332,3 +332,10 @@ Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.
 2022-11-14 14:43:43.163  INFO 5652 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 6.948 seconds (JVM running for 9.074)
 2022-11-14 14:43:43.170  INFO 5652 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment COMMON
 2022-11-14 14:43:43.171  INFO 5652 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
+2022-11-14 16:53:16.260  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 18.0.2.1 on DESKTOP-SIU5IMB with PID 3316 (C:\Users\dell\IdeaProjects\EmployeePayrollApp\target\classes started by dell in C:\Users\dell\IdeaProjects\EmployeePayrollApp)
+2022-11-14 16:53:16.263 DEBUG 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-14 16:53:16.264  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-11-14 16:53:20.519  WARN 3316 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-14 16:53:20.959  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.357 seconds (JVM running for 6.572)
+2022-11-14 16:53:20.964  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment COMMON
+2022-11-14 16:53:20.964  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
