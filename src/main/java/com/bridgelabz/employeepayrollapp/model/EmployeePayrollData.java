@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
+
 public class EmployeePayrollData {
     @Id
     @GeneratedValue
@@ -19,7 +20,6 @@ public class EmployeePayrollData {
     private String profilePic;
 
     LocalDate date;
-
 
     public EmployeePayrollData() {
 

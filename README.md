@@ -91,3 +91,103 @@ or deleting Employee Payroll Data in UC 2.
 - In this use case the Services Layer will store this
 Data in a Memory as a List. As we go further
 down we will persist this data in DB.
+
+
+
+
+
+
+
+
+
+
+
+UseCase6-Use Lombok Library to auto generate getters and setters for the DTO
+- For Eclipse and IntelliJ Download Lombok Executable Jar and run the jar.
+This will identify the IDE and install the add on 
+- For VS Code Install Lombok 
+- Add Lombok Dependency to POM File
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UseCase7-Use Lombok Library for
+Logging 
+- Note using Annotation @Slf4j at Class Level,
+Logging is activated
+- Note Logging Levels, Files and Patterns are
+handled in application.properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UseCase8-Determine the Logging Levels, Logging
+to Console or File, Logging Patterns, etc
+based on this application running in
+Dev, Staging or Production - Note we create application.properties for dev and
+production.
+- And in common application.properties define the profile
+using spring.profiles.active=dev. To use spring file add
+following dependency in POM file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UseCase9-Database setting as Environment
+Variable
+- Open the MySQL Client and run the script in
+Step1 to setup DB, User and Priviledges
+- And in common application.properties define the
+profile using spring.profiles.active=dev. To use
+spring file add following dependency in POM file

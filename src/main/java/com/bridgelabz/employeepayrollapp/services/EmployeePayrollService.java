@@ -34,6 +34,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
         Optional<EmployeePayrollData> optional = employeePayrollRepository.findById(id);
         if (optional.isPresent()) {
             EmployeePayrollData updateEmployee = new EmployeePayrollData(id, employeePayrollDTO);
+            employeePayrollDataList.set(id-1,updateEmployee);
             employeePayrollRepository.save(updateEmployee);
             return updateEmployee;
         } else {
@@ -52,6 +53,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
             updateEmployee.setEmployeeId(id);
             updateEmployee.setSalary(employeePayrollDTO.getSalary());
             updateEmployee.setProfilePic(employeePayrollDTO.getProfilePic());
+            employeePayrollDataList.set(id-1,updateEmployee);
             employeePayrollRepository.save(updateEmployee);
             return updateEmployee;
         } else {
