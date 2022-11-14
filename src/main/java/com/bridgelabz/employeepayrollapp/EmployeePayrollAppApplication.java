@@ -7,13 +7,23 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @Slf4j
 @SpringBootApplication
+//Using slf4j for logging in console
+@Slf4j
 public class EmployeePayrollAppApplication {
 //Here context is used to store the configuration of SpringApplication which run with various argument
 // from that we are able to get environment and database name
     public static void main(String[] args) {
+<<<<<<< HEAD
         ConfigurableApplicationContext context = SpringApplication.run(EmployeePayrollAppApplication.class, args);
         log.info("Employee payroll app started in {} Environment", context.getEnvironment().getProperty("environment"));
         log.info("Employee payroll db User is {} ", context.getEnvironment().getProperty("spring.datasource.username"));
+=======
+        //SpringApplication.run Use to run the application with args and save it in the variable context
+        // So we can access its environment property and print is using log.info
+        ConfigurableApplicationContext context = SpringApplication.run(EmployeePayrollAppApplication.class, args);
+        log.info("Employee payroll app started in {} Environment " + context.getEnvironment().getProperty("environment"));
+        log.info("Employee payroll DB User is {} " + context.getEnvironment().getProperty("spring.datasource.username"));
+>>>>>>> UC7_Use_Lombok_For_Logging
     }
 
 }

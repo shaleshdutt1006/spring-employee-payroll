@@ -19,7 +19,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     //Array List to get data by its id
     private List<EmployeePayrollData> employeePayrollDataList = new ArrayList<EmployeePayrollData>();
 
-    //Method to add data to the database
+    //Method to add data to the database and to employee list also
     @Override
     public EmployeePayrollData addData(EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData newEmployee = new EmployeePayrollData(employeePayrollDataList.size() + 1, employeePayrollDTO);
