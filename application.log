@@ -339,3 +339,27 @@ Caused by: javax.management.InstanceAlreadyExistsException: org.springframework.
 2022-11-14 16:53:20.959  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.357 seconds (JVM running for 6.572)
 2022-11-14 16:53:20.964  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment COMMON
 2022-11-14 16:53:20.964  INFO 3316 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
+2022-11-14 17:25:49.911  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 18.0.2.1 on DESKTOP-SIU5IMB with PID 5456 (C:\Users\dell\IdeaProjects\EmployeePayrollApp\target\classes started by dell in C:\Users\dell\IdeaProjects\EmployeePayrollApp)
+2022-11-14 17:25:49.914 DEBUG 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-14 17:25:49.915  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-11-14 17:25:55.802  WARN 5456 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-14 17:25:56.325  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 7.151 seconds (JVM running for 8.631)
+2022-11-14 17:25:56.329  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment COMMON
+2022-11-14 17:25:56.330  INFO 5456 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
+2022-11-14 17:44:40.694  INFO 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 18.0.2.1 on DESKTOP-SIU5IMB with PID 5936 (C:\Users\dell\IdeaProjects\EmployeePayrollApp\target\classes started by dell in C:\Users\dell\IdeaProjects\EmployeePayrollApp)
+2022-11-14 17:44:40.697 DEBUG 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-14 17:44:40.698  INFO 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following 1 profile is active: "DEV"
+2022-11-14 17:44:45.023  WARN 5936 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-14 17:44:45.469  INFO 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.41 seconds (JVM running for 6.686)
+2022-11-14 17:44:45.475  INFO 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment DEV
+2022-11-14 17:44:45.475  INFO 5936 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
+2022-11-14 17:46:48.902  INFO 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 18.0.2.1 on DESKTOP-SIU5IMB with PID 9288 (C:\Users\dell\IdeaProjects\EmployeePayrollApp\target\classes started by dell in C:\Users\dell\IdeaProjects\EmployeePayrollApp)
+2022-11-14 17:46:48.904 DEBUG 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-14 17:46:48.905  INFO 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following 1 profile is active: "DEV"
+2022-11-14 17:46:54.032  WARN 9288 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-14 17:46:54.533  INFO 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 6.361 seconds (JVM running for 7.942)
+2022-11-14 17:46:54.539  INFO 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll app started in {} Environment null
+2022-11-14 17:46:54.539  INFO 9288 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Employee payroll DB User is {} root
+2022-11-14 17:50:35.153  INFO 9360 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 18.0.2.1 on DESKTOP-SIU5IMB with PID 9360 (C:\Users\dell\IdeaProjects\EmployeePayrollApp\target\classes started by dell in C:\Users\dell\IdeaProjects\EmployeePayrollApp)
+2022-11-14 17:50:35.155 DEBUG 9360 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-14 17:50:35.156  INFO 9360 --- [restartedMain] c.b.e.EmployeePayrollAppApplication      : The following 1 profile is active: "DEV"
