@@ -191,3 +191,29 @@ Step1 to setup DB, User and Priviledges
 - And in common application.properties define the
 profile using spring.profiles.active=dev. To use
 spring file add following dependency in POM file
+
+
+
+
+
+
+
+UseCase10-Provide User Friendly Error Response in case validation fails Create a Custom Exception Handlers class and 
+use @ControllerAdvice Annotation so that Spring Framework can call this class to handle Exceptions thrown during processing REST API Request.
+To handle Validation Errors create @ExceptionHandler method for MethodArgumentNotValidException class is defined.
+
+
+
+
+
+
+UseCase11-Add Validation to Name Field so the REST call can be validated
+To begin with make it a required field i.e. a not empty field Then add pattern to it.
+ The Validation needs to be done for both Create and Update REST Calls
+
+
+
+
+UseCase12-Ability to throw User Friendly Errors in case Employee Id is not found in Employee Payroll App. 
+Define a Custom Exception for Employee Not Found and through when Employee Id is passed as parameter.
+Handle such Exceptions in @ExceptionHandler method for EmployeePayrollException class.

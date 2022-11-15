@@ -1,6 +1,7 @@
 package com.bridgelabz.employeepayrollapp.services;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+import com.bridgelabz.employeepayrollapp.exception.EmployeePayrollException;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 import com.bridgelabz.employeepayrollapp.repository.EmployeePayrollRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     EmployeePayrollRepository employeePayrollRepository;
 
     //Array List to get data by its id
-    private List<EmployeePayrollData> employeePayrollDataList = new ArrayList<EmployeePayrollData>();
+    private List<EmployeePayrollData> employeePayrollDataList = new ArrayList<>();
 
     //Method to add data to the database and to employee list also
     @Override
@@ -34,11 +35,11 @@ public class EmployeePayrollService implements IEmployeePayrollService {
         Optional<EmployeePayrollData> optional = employeePayrollRepository.findById(id);
         if (optional.isPresent()) {
             EmployeePayrollData updateEmployee = new EmployeePayrollData(id, employeePayrollDTO);
-            employeePayrollDataList.set(id-1,updateEmployee);
+            employeePayrollDataList.set(id - 1, updateEmployee);
             employeePayrollRepository.save(updateEmployee);
             return updateEmployee;
         } else {
-            return null;
+            throw new EmployeePayrollException("Employee not present in the list to update");
         }
     }
 
@@ -53,36 +54,43 @@ public class EmployeePayrollService implements IEmployeePayrollService {
             updateEmployee.setEmployeeId(id);
             updateEmployee.setSalary(employeePayrollDTO.getSalary());
             updateEmployee.setProfilePic(employeePayrollDTO.getProfilePic());
-            employeePayrollDataList.set(id-1,updateEmployee);
+            employeePayrollDataList.set(id - 1, updateEmployee);
             employeePayrollRepository.save(updateEmployee);
             return updateEmployee;
         } else {
-            return null;
+            throw new EmployeePayrollException("Employee not present in the list to update");
         }
     }
 
     @Override
-    //Method to get data by its id in the database optional.ofNullable() method of java.util.Optional class in
-    // Java is used to get an instance of this Optional class with the specified value of the specified type
-    //  If the specified value is null, then this method returns an empty instance of the Optional class
-    //id-1 is done because arraylist show element starting from 0
-    public Optional<EmployeePayrollData> getById(int id) {
+    //Method to get data by its id in the database if present otherwise throw custom exception of
+    // the EmployeePayrollException class
 
-        return Optional.ofNullable(employeePayrollDataList.get(id - 1));
+    public EmployeePayrollData getById(int id) {
+        return employeePayrollDataList.stream().
+                filter(empData -> empData.getEmployeeId() == id).findFirst()
+                .orElseThrow(() -> new EmployeePayrollException("Employee not found in the list"));
     }
 
     @Override
-    //Method to get all the data in the database
+    //Method to get all the data in the database if it is empty then throw exception
+    // otherwise give all employees
     public List<EmployeePayrollData> getAll() {
-        return employeePayrollDataList;
+        if (!employeePayrollDataList.isEmpty()) {
+            return employeePayrollDataList;
+        } else throw new EmployeePayrollException("No Employee Present in the database");
     }
 
     @Override
     //Method to delete data by its id
     public List<EmployeePayrollData> deleteById(int id) {
-        employeePayrollRepository.deleteById(id);
-        employeePayrollDataList.remove(id - 1);
-        return employeePayrollRepository.findAll();
+        if (employeePayrollRepository.findById(id).isPresent()) {
+            employeePayrollRepository.deleteById(id);
+            employeePayrollDataList.remove(id - 1);
+            return employeePayrollDataList;
+        } else {
+            throw new EmployeePayrollException("Id not present in the list to delete");
+        }
     }
 
     @Override
@@ -102,7 +110,10 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     @Override
     //Count number of employees in database using id
     public String countIdInSavedList() {
-        return "Number of employees in the List is : " + employeePayrollDataList.size();
+        if (employeePayrollDataList.isEmpty()) {
+            throw new EmployeePayrollException("No Employees to count");
+        } else {
+            return "Number of employees in the List is : " + employeePayrollDataList.size();
+        }
     }
-
 }

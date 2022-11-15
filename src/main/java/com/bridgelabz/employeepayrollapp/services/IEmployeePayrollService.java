@@ -4,7 +4,6 @@ import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IEmployeePayrollService {
 
@@ -19,7 +18,7 @@ public interface IEmployeePayrollService {
     EmployeePayrollData EditData(int id, EmployeePayrollDTO employeePayrollDTO);
 
     //Method to get data by its id in the database
-    Optional<EmployeePayrollData> getById(int id);
+    EmployeePayrollData getById(int id);
 
     List<EmployeePayrollData> getAll();
 

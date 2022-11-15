@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/payroll")
@@ -51,7 +51,7 @@ public class EmployeePayrollController {
     // then it return data otherwise return null
     @GetMapping("/getId/{Id}")
     public ResponseEntity<ResponseDTO> getById(@PathVariable(value = "Id") int Id) {
-        Optional<EmployeePayrollData> updatedEmployee = employeePayrollService.getById(Id);
+        EmployeePayrollData updatedEmployee = employeePayrollService.getById(Id);
         ResponseDTO responseDTO = new ResponseDTO("Get call Id successfully", updatedEmployee);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
     }
