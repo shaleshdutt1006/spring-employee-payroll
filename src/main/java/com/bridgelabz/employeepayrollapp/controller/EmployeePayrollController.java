@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public class EmployeePayrollController {
 
     //Method for adding data in database
     @PostMapping("/add")
-    public ResponseEntity<ResponseDTO> addData(@RequestBody EmployeePayrollDTO employeePayrollDTO) {
+    public ResponseEntity<ResponseDTO> addData(@Valid @RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData employeePayrollData = employeePayrollService.addData(employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Data added successfully ", employeePayrollData);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
@@ -30,7 +31,7 @@ public class EmployeePayrollController {
 
     //Method to update data in database
     @PutMapping("/update/{Id}")
-    public ResponseEntity<ResponseDTO> updateData(@PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
+    public ResponseEntity<ResponseDTO> updateData(@Valid @PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData updatedEmployee = employeePayrollService.updateData(Id, employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated employee data successfully", updatedEmployee);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
@@ -39,7 +40,7 @@ public class EmployeePayrollController {
 
     //Second Method to update data in database
     @PutMapping("/edit/{Id}")
-    public ResponseEntity<ResponseDTO> EditData(@PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
+    public ResponseEntity<ResponseDTO> EditData(@Valid @PathVariable int Id, @RequestBody EmployeePayrollDTO employeePayrollDTO) {
         EmployeePayrollData updatedEmployee = employeePayrollService.EditData(Id, employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated employee data successfully", updatedEmployee);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
