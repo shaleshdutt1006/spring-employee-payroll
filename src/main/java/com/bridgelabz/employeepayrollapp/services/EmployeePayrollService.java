@@ -108,7 +108,7 @@ public class EmployeePayrollService implements IEmployeePayrollService {
     }
 
     @Override
-    //Count number of employees in database using id
+    //Count number of employees in database using their id
     public String countIdInSavedList() {
         if (employeePayrollDataList.isEmpty()) {
             throw new EmployeePayrollException("No Employees to count");
