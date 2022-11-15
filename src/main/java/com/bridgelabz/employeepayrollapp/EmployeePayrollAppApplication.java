@@ -12,7 +12,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 
 public class EmployeePayrollAppApplication {
-    //Here context is used to store the configuration of SpringApplication which run with various argument
+//Here context is used to store the configuration of SpringApplication which run with various argument
 // from that we are able to get environment and database name
     public static void main(String[] args) {
 

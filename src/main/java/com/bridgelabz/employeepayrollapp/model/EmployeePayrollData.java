@@ -2,6 +2,8 @@ package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 
+@NoArgsConstructor
 public class EmployeePayrollData {
     @Id
     @GeneratedValue
@@ -21,9 +24,6 @@ public class EmployeePayrollData {
 
     LocalDate date;
 
-    public EmployeePayrollData() {
-
-    }
 
     //insert constructor
     public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
