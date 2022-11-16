@@ -217,3 +217,16 @@ To begin with make it a required field i.e. a not empty field Then add pattern t
 UseCase12-Ability to throw User Friendly Errors in case Employee Id is not found in Employee Payroll App. 
 Define a Custom Exception for Employee Not Found and through when Employee Id is passed as parameter.
 Handle such Exceptions in @ExceptionHandler method for EmployeePayrollException class.
+
+
+
+
+
+
+
+
+
+
+
+
+USeCase13-Ability to get employee by its department using custom query in repository
