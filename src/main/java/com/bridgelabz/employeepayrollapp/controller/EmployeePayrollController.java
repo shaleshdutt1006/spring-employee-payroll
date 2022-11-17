@@ -44,8 +44,23 @@ public class EmployeePayrollController {
         EmployeePayrollData updatedEmployee = employeePayrollService.EditData(Id, employeePayrollDTO);
         ResponseDTO responseDTO = new ResponseDTO("Updated employee data successfully", updatedEmployee);
         return new ResponseEntity<>(responseDTO, HttpStatus.OK);
-
     }
+    //Method to get employees of particular department
+    @GetMapping("/getByDepartment")
+    public ResponseEntity<ResponseDTO> getByDepartment(@RequestParam String department){
+        List<EmployeePayrollData> foundEmployee=employeePayrollService.findEmployeeByDepartment(department);
+        ResponseDTO responseDTO=new ResponseDTO("Employees of this department is",foundEmployee);
+        return new ResponseEntity<>(responseDTO,HttpStatus.FOUND);
+    }
+
+    //Method to sort Employees by their salaries
+    @GetMapping("/sortBySalary")
+    public ResponseEntity<ResponseDTO> sortBySalary(){
+        List<EmployeePayrollData> sortedList=employeePayrollService.sortedBySalary();
+        ResponseDTO responseDTO=new ResponseDTO("Employees of this department is",sortedList);
+        return new ResponseEntity<>(responseDTO,HttpStatus.FOUND);
+    }
+
 
     // Method to get data by its Id here we use Optional in return because if Id present
     // then it return data otherwise return null

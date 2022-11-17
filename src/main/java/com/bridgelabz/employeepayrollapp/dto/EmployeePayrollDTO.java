@@ -17,25 +17,26 @@ public @Data class EmployeePayrollDTO {
 // @NotEmpty(message = "First name cannot be null and must have size greater than 0",means we cannot use
 //without giving something to firstname there must be something but in case of not null can use empty string.
 
-    @NotEmpty
+    @NotEmpty(message = "First name is mandatory")
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z]{2,}$", message = "Employee First Name Invalid")
-    public String firstName;
+    private String firstName;
 
     // @NotNull(message = "Second name must not be null, empty value/space can be considered")
     @NotNull
-    public String lastName;
+    private String lastName;
 
     // @NotBlank(message = "Profile must not be null and must contain 1 or more characters")
     @NotBlank
-    public String profilePic;
+    private String profilePic;
 
     @FutureOrPresent
     LocalDate date;
 
     @NotNull
     @Min(value = 2000000, message = "Minimum wage should be more than 20 lac")
-    public Long salary;
+    private Long salary;
 
-
+    @NotEmpty(message = "Department name is mandatory")
+    private String department;
 }
 

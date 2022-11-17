@@ -62,6 +62,26 @@ public class EmployeePayrollService implements IEmployeePayrollService {
         }
     }
 
+    // Method to find employee by its department
+    @Override
+    public List<EmployeePayrollData> findEmployeeByDepartment(String department) {
+        List<EmployeePayrollData> foundEmployee = employeePayrollRepository.findByDepartment(department);
+        if (foundEmployee.isEmpty()) {
+            throw new EmployeePayrollException("No Employee present for this department");
+        } else
+            return foundEmployee;
+    }
+
+    //Method to sort Employee by its salary
+    @Override
+    public List<EmployeePayrollData> sortedBySalary() {
+        List<EmployeePayrollData> sortedList = employeePayrollRepository.sortedBySalary();
+        if (sortedList.isEmpty()) {
+            throw new EmployeePayrollException("No employee found for sorting by salary");
+        } else
+            return sortedList;
+    }
+
     @Override
     //Method to get data by its id in the database if present otherwise throw custom exception of
     // the EmployeePayrollException class

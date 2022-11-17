@@ -17,6 +17,12 @@ public interface IEmployeePayrollService {
     // Second method to update data using setter and getter methods
     EmployeePayrollData EditData(int id, EmployeePayrollDTO employeePayrollDTO);
 
+    // Method to find employee by its department
+    List<EmployeePayrollData> findEmployeeByDepartment(String department);
+
+    //Method to sort Employee by its salary
+    List<EmployeePayrollData> sortedBySalary();
+
     //Method to get data by its id in the database
     EmployeePayrollData getById(int id);
 
