@@ -4,7 +4,7 @@ package com.bridgelabz.employeepayrollapp.exception;
 public class EmployeePayrollException extends RuntimeException {
 
     public EmployeePayrollException(String message) {
-        //super keyword used to give message to the runtime exception class
+        //super keyword used to give message to the runtime Exception class
         super(message);
     }
 }

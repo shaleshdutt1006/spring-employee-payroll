@@ -1,6 +1,7 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @NoArgsConstructor
+
 public class EmployeePayrollData {
     @Id
     @GeneratedValue
@@ -21,8 +23,8 @@ public class EmployeePayrollData {
     private String lastName;
     private long salary;
     private String profilePic;
-
     LocalDate date;
+    private String department;
 
 
     //insert constructor
@@ -32,6 +34,7 @@ public class EmployeePayrollData {
         this.salary = employeePayrollDTO.getSalary();
         this.profilePic = employeePayrollDTO.getProfilePic();
         this.date = employeePayrollDTO.getDate();
+        this.department=employeePayrollDTO.getDepartment();
     }
 
     //update constructor
@@ -42,6 +45,7 @@ public class EmployeePayrollData {
         this.salary = employeePayrollDTO.getSalary();
         this.profilePic = employeePayrollDTO.getProfilePic();
         this.date = employeePayrollDTO.getDate();
+        this.department=employeePayrollDTO.getDepartment();
     }
 
 
